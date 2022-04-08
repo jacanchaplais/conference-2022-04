@@ -1,0 +1,26 @@
+---
+template: default.revealjs
+metadata-files:
+  - templates/document.yaml
+  - templates/title_page.yaml
+metadata:
+  revealjs-url: js/vendor/reveal.js
+slide-level: 2
+from: markdown+citations
+to: revealjs
+html-math-method:
+  method: mathjax
+output-file: public/index.html
+input-files:
+  - content/problem.md
+  - content/work.md
+  - content/progress.md
+  - content/plan.md
+filters:
+  - pandoc-crossref
+  - citeproc
+bibliography: templates/refs.bib
+csl: templates/elsevier-vancouver.csl
+css:
+  - css/custom.css
+...
