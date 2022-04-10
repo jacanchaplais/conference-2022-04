@@ -11,11 +11,6 @@ to: revealjs
 html-math-method:
   method: mathjax
 output-file: public/index.html
-input-files:
-  - content/problem.md
-  - content/work.md
-  - content/progress.md
-  - content/plan.md
 filters:
   - pandoc-crossref
   - citeproc

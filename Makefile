@@ -4,4 +4,4 @@ compile_report:
 	@mkdir -p public/css/
 	@pysassc src/scss/main.scss public/css/custom.css
 	@rsync -rau static/* public/
-	@pandoc --defaults=templates/build.yaml
+	@pandoc content/*.md templates/references.md --defaults=templates/build.yaml
