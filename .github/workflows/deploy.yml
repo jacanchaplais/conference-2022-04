@@ -25,15 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up conda
-        uses: s-weigand/setup-conda@v1
+      - name: Install conda environment
+        uses: mamba-org/provision-with-micromamba@main
         with:
-          update-conda: true
-          activate-conda: true
-          conda-channels: conda-forge
-      - name: Install dependencies
-        run: conda env update -f environment.yaml -n base
+          cache-env: true
       - name: Build site
+        shell: bash -l {0}
         run: make
       - name: Deploy site
         if: success()
